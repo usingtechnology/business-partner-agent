@@ -2,7 +2,7 @@
 # Copyright (c) 2020 - for information on the respective copyright owner
 # see the NOTICE file and/or the repository at
 # https://github.com/hyperledger-labs/organizational-agent
-# 
+#
 # SPDX-License-Identifier: Apache-2.0
 
 if [ "$(which gp)" ]; then
@@ -70,7 +70,7 @@ if curl --fail -s -d $PAYLOAD  -H "Content-Type: application/json" -X POST ${URL
             '"$1"'='"${SEED}"'
             ' $DEST_FILE
         fi
-    fi 
+    fi
 
 else
     # Something went wrong
@@ -81,3 +81,4 @@ fi;
 
 register_did "ACAPY_SEED"
 register_did "ACAPY_SEED2"
+register_did "ACAPY_SEED3"

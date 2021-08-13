@@ -34,47 +34,124 @@
     </div>
     <div v-if="!isWelcome && !isLoading">
       <v-row>
-        <v-col class="col-sm-5 offset-sm-1 col-md-4 offset-md-2">
-          <v-card class="mx-auto" :to="{ name: 'Wallet' }">
-            <v-img
-              class="align-end"
-              src="@/assets/undraw_certification_aif8.png"
-            ></v-img>
-            <v-card-title class="justify-center">
-              <span class="cardTitle">
-                {{ status.credentials }}
-              </span>
-              <span
-                class="newHighlight"
-                v-show="credentialNotificationsCount > 0"
-              >
-                (+{{ credentialNotificationsCount }})
-              </span>
-            </v-card-title>
-            <v-card-title class="justify-center"
-              >Verified Credentials</v-card-title
-            >
+          <v-col class="col-12 col-sm-6 col-md-4">
+            <v-card class="mx-auto">
+              <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Credentials you hold</v-card-title>
+              <v-card-text>
+                <v-container>
+                  <v-row>
+                    <v-col class="col-6">
+                      <v-icon color="black" size="120">$vuetify.icons.wallet</v-icon>
+                    </v-col>
+                    <v-col class="col-6">
+                      <span class="cardTitle" style="color:black;">{{ status.credentials }}</span>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
+              <v-card-actions class="justify-center">
+                <v-btn text link :to="{ name: 'Partners' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+          <v-col class="col-12 col-sm-6 col-md-4">
+          <v-card class="mx-auto">
+            <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Sent proof Requests</v-card-title>
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col class="col-6">
+                    <v-icon color="black" size="120">$vuetify.icons.proofRequests</v-icon>
+                  </v-col>
+                  <v-col class="col-6">
+                    <span class="cardTitle" style="color:black;">{{ status.credentials }}</span>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn text link :to="{ name: 'Partners' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+            </v-card-actions>
           </v-card>
         </v-col>
-        <v-col class="col-sm-5 col-md-4">
-          <v-card class="mx-auto" :to="{ name: 'Partners' }">
-            <!-- FIXME Used aspect ratio as a hacky way to make the cards the same height -->
-            <v-img
-              class="align-end"
-              aspect-ratio="1.29"
-              src="@/assets/undraw_agreement_aajr.png"
-            ></v-img>
-            <v-card-title class="justify-center">
-              <span class="cardTitle">
-                {{ status.partners }}
-              </span>
-              <span class="newHighlight" v-show="partnerNotificationsCount > 0">
-                (+{{ partnerNotificationsCount }})
-              </span>
-            </v-card-title>
-            <v-card-title class="justify-center"
-              >Business Partners</v-card-title
-            >
+          <v-col class="col-12 col-sm-6 col-md-4">
+            <v-card class="mx-auto">
+              <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Business Partners</v-card-title>
+              <v-card-text>
+                <v-container>
+                  <v-row>
+                    <v-col class="col-6">
+                      <v-icon color="black" size="120">$vuetify.icons.partners</v-icon>
+                    </v-col>
+                    <v-col class="col-6">
+                      <span class="cardTitle" style="color:black;">{{ status.partners }}</span>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-card-text>
+              <v-card-actions class="justify-center">
+                <v-btn text link :to="{ name: 'Partners' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        <v-col class="col-12 col-sm-6 col-md-4">
+          <v-card class="mx-auto">
+            <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Credentials you issued</v-card-title>
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col class="col-6">
+                    <v-icon color="black" size="120">$vuetify.icons.credentialManagement</v-icon>
+                  </v-col>
+                  <v-col class="col-6">
+                    <span class="cardTitle" style="color:black;">{{ status.credentials }}</span>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn text link :to="{ name: 'CredentialManagement' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col class="col-12 col-sm-6 col-md-4">
+          <v-card class="mx-auto">
+            <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Received proof Requests</v-card-title>
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col class="col-6">
+                    <v-icon color="black" size="120">$vuetify.icons.proofRequests</v-icon>
+                  </v-col>
+                  <v-col class="col-6">
+                    <span class="cardTitle" style="color:black;">{{ status.credentials }}</span>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn text link :to="{ name: 'Partners' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+        <v-col class="col-12 col-sm-6 col-md-4">
+          <v-card class="mx-auto">
+            <v-card-title class="justify-center bg-light" style="text-transform: capitalize">Pending Actions</v-card-title>
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col class="col-6">
+                    <v-icon color="black" size="120">$vuetify.icons.notifications</v-icon>
+                  </v-col>
+                  <v-col class="col-6">
+                    <span class="cardTitle" style="color:black;">{{ status.credentials }}</span>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn text link :to="{ name: 'Notifications' }">View <v-icon>$vuetify.icons.next</v-icon></v-btn>
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
